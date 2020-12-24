@@ -1,0 +1,41 @@
+Endpoint Sample:
+
+- To create a new Resource
+[PUT] ../content
+Request:
+{
+    "type":"endpoint-profile",
+    "name":"country",
+    "response":"[{\"id\":1,\"countryName\":\"Afghanistan\",\"alpha2Code\":\"AF\",\"alpha3Code\":\"AFG\",\"createdBy\":\"BACKEND_SCRIPT\",\"createdDate\":\"2019-11-14T18:34:57.461702Z\",\"modifiedBy\":null,\"modifiedDate\":null},{\"id\":2,\"countryName\":\"Algeria\",\"alpha2Code\":\"DZ\",\"alpha3Code\":\"DZA\",\"createdBy\":\"BACKEND_SCRIPT\",\"createdDate\":\"2019-11-14T18:34:57.461702Z\",\"modifiedBy\":null,\"modifiedDate\":null}]"
+}
+
+-To get the content  
+// [POST] ../content 
+// Request saample:
+// {
+//     "type":"endpoint-profile",
+//     "name":"country",
+//     "limit":10,
+//     "filter":{"key":"countryName","value":"Afghanistan"}
+// }
+
+[GET] ../content?type=endpoint-profile&name=country&limit=10
+[GET] ../{0}
+//endpoint-profile/api/v3/country-codes
+
+
+- To update existing resource
+[PATCH] ../content
+Request:
+{
+    "type":"endpoint-profile",
+    "name":"country",
+    "response":"[{\"id\":1,\"countryName\":\"Afghanistan\",\"alpha2Code\":\"AF\",\"alpha3Code\":\"AFG\",\"createdBy\":\"BACKEND_SCRIPT\",\"createdDate\":\"2019-11-14T18:34:57.461702Z\",\"modifiedBy\":null,\"modifiedDate\":null},{\"id\":2,\"countryName\":\"Algeria\",\"alpha2Code\":\"DZ\",\"alpha3Code\":\"DZA\",\"createdBy\":\"BACKEND_SCRIPT\",\"createdDate\":\"2019-11-14T18:34:57.461702Z\",\"modifiedBy\":null,\"modifiedDate\":null}]"
+}
+
+-To delete content
+[DELETE] ../content
+{
+    "type":"endpoint-profile",
+    "name":"country"
+}
